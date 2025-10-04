@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddqfdb26fxqn3"]
+
+[ext_resource type="Script" uid="uid://c8mcn4ej5jy71" path="res://options.gd" id="1_5v8ap"]
+
+[node name="Options" type="CanvasLayer"]
+script = ExtResource("1_5v8ap")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -188.5
+offset_top = 55.0
+offset_right = 188.5
+offset_bottom = 288.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 84
+text = "Opciones
+"
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -292.5
+offset_top = -127.0
+offset_right = 310.5
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Volumen de Música"
+
+[node name="VolumeSlider" type="HSlider" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.5
+offset_top = 4.0
+offset_right = 402.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 56.0
+offset_top = 28.0
+offset_right = 177.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 34
+text = " Volver
+"

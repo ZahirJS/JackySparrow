@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://rbsrsvgrn1du"]
+[gd_scene load_steps=21 format=3 uid="uid://rbsrsvgrn1du"]
 
 [ext_resource type="Texture2D" uid="uid://dgx0ojksbsfjm" path="res://assets/background.png" id="1_oi3di"]
 [ext_resource type="PackedScene" uid="uid://b7v5cjk1bpwqd" path="res://player.tscn" id="1_u52ul"]
@@ -6,8 +6,9 @@
 [ext_resource type="Script" uid="uid://bbpndg4m0hipb" path="res://death_zone.gd" id="4_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://d2fs1kuumkpml" path="res://coin.tscn" id="5_f2txt"]
 [ext_resource type="PackedScene" uid="uid://dwfhclmsanc1k" path="res://hud.tscn" id="6_1ainy"]
-[ext_resource type="PackedScene" uid="uid://d1y4ge6egpjyd" path="res://flag.tscn" id="7_n6hdu"]
+[ext_resource type="Script" uid="uid://ck3w4r6d23uxe" path="res://flag.gd" id="7_h6smj"]
 [ext_resource type="PackedScene" uid="uid://xieg2fhfc5tx" path="res://enemy.tscn" id="8_km5ld"]
+[ext_resource type="Texture2D" uid="uid://hn6ulnbpfcry" path="res://assets/end.png" id="8_v5j5c"]
 [ext_resource type="PackedScene" uid="uid://bppxuugghggur" path="res://obstacle.tscn" id="9_i2t4f"]
 [ext_resource type="AudioStream" uid="uid://bj6c6jyo0226o" path="res://music/One Day (From Pirates of the Caribbean_ At World's EndScore).mp3" id="10_8cye3"]
 [ext_resource type="PackedScene" uid="uid://mm1tewtjaori" path="res://enemy2.tscn" id="11_2orkt"]
@@ -28,6 +29,9 @@ size = Vector2(3398, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b4ue"]
 size = Vector2(18092.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ts4f7"]
+size = Vector2(222, 765)
 
 [node name="Level" type="Node2D"]
 
@@ -365,6 +369,54 @@ position = Vector2(139, 78)
 shape = SubResource("RectangleShape2D_vonw3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform50"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform52" type="StaticBody2D" parent="."]
+position = Vector2(16400, 281)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform52"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform52"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform54" type="StaticBody2D" parent="."]
+position = Vector2(15681, 118)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform54"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform54"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform55" type="StaticBody2D" parent="."]
+position = Vector2(15159, 221)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform55"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform55"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform53" type="StaticBody2D" parent="."]
+position = Vector2(17173, 504)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform53"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform53"]
 position = Vector2(139, 79)
 scale = Vector2(0.3131068, 0.33828384)
 texture = ExtResource("2_vonw3")
@@ -802,7 +854,7 @@ scale = Vector2(0.6868932, 0.37376243)
 texture = ExtResource("2_vonw3")
 
 [node name="LargePlatform12" type="StaticBody2D" parent="."]
-position = Vector2(13233, 621)
+position = Vector2(13234, 624)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform12"]
 position = Vector2(295, 72)
@@ -814,7 +866,7 @@ scale = Vector2(0.6868932, 0.37376243)
 texture = ExtResource("2_vonw3")
 
 [node name="LargePlatform13" type="StaticBody2D" parent="."]
-position = Vector2(13784, 621)
+position = Vector2(13782, 627)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform13"]
 position = Vector2(295, 72)
@@ -838,7 +890,7 @@ scale = Vector2(0.6868932, 0.37376243)
 texture = ExtResource("2_vonw3")
 
 [node name="LargePlatform15" type="StaticBody2D" parent="."]
-position = Vector2(14528, 211)
+position = Vector2(14457, 434)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform15"]
 position = Vector2(295, 72)
@@ -945,8 +997,18 @@ position = Vector2(16004, -16)
 
 [node name="HUD" parent="." instance=ExtResource("6_1ainy")]
 
-[node name="Flag" parent="." instance=ExtResource("7_n6hdu")]
+[node name="Flag" type="Area2D" parent="."]
 position = Vector2(17690, 117)
+scale = Vector2(0.65, 0.65)
+script = ExtResource("7_h6smj")
+next_level_path = "res://level2.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="Flag"]
+texture = ExtResource("8_v5j5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flag"]
+position = Vector2(-2, 7.5)
+shape = SubResource("RectangleShape2D_ts4f7")
 
 [node name="Enemy" parent="." instance=ExtResource("8_km5ld")]
 position = Vector2(1032, 487)
@@ -964,7 +1026,13 @@ position = Vector2(14849, 818)
 position = Vector2(15460, 825)
 
 [node name="Enemy15" parent="." instance=ExtResource("8_km5ld")]
-position = Vector2(16472, 822)
+position = Vector2(16658, 160)
+
+[node name="Enemy19" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(17600, 828)
+
+[node name="Enemy20" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(17186, 817)
 
 [node name="Enemy16" parent="." instance=ExtResource("8_km5ld")]
 position = Vector2(17394, 825)
@@ -1050,6 +1118,30 @@ position = Vector2(12979, 112)
 [node name="Obstacle23" parent="." instance=ExtResource("9_i2t4f")]
 position = Vector2(13491, 213)
 
+[node name="Obstacle33" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(15165, 353)
+
+[node name="Obstacle34" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(15358, 405)
+
+[node name="Obstacle35" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(16197, 311)
+
+[node name="Obstacle36" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(16236, 338)
+
+[node name="Obstacle37" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(16141, 338)
+
+[node name="Obstacle38" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(15413, 380)
+
+[node name="Obstacle39" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(15096, 349)
+
+[node name="Obstacle40" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(15470, 354)
+
 [node name="Obstacle24" parent="." instance=ExtResource("9_i2t4f")]
 position = Vector2(13412, 214)
 
@@ -1088,10 +1180,7 @@ position = Vector2(8720, -37)
 position = Vector2(15135, 832)
 
 [node name="Enemy18" parent="." instance=ExtResource("11_2orkt")]
-position = Vector2(16265, 826)
-
-[node name="Enemy19" parent="." instance=ExtResource("11_2orkt")]
-position = Vector2(17176, 826)
+position = Vector2(17306, 399)
 
 [node name="Enemy9" parent="." instance=ExtResource("11_2orkt")]
 position = Vector2(2561, 247)
@@ -1103,9 +1192,7 @@ position = Vector2(15463, -1268)
 position = Vector2(2034, 813)
 
 [node name="Enemy22" parent="." instance=ExtResource("14_h6smj")]
-position = Vector2(15822, 750)
-
-[node name="Enemy23" parent="." instance=ExtResource("14_h6smj")]
-position = Vector2(16816, 740)
+position = Vector2(16370, 739)
 
 [connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]
+[connection signal="body_entered" from="Flag" to="Flag" method="_on_body_entered"]
