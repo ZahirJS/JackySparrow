@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://l2epfhc2h3vc"]
+
+[ext_resource type="Script" uid="uid://dla4clj24kej3" path="res://gameover.gd" id="1_4nh4k"]
+
+[node name="gameover" type="CanvasLayer"]
+script = ExtResource("1_4nh4k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameOverLabel" type="Label" parent="."]
+offset_left = 462.0
+offset_top = 303.0
+offset_right = 1162.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 122
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = -2.0
+offset_right = 123.5
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 55
+text = "RESTART
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

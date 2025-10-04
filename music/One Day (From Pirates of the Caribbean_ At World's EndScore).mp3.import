@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bj6c6jyo0226o"
+path="res://.godot/imported/One Day (From Pirates of the Caribbean_ At World's EndScore).mp3-4c8c7641a42c8f830c17c533e780edec.mp3str"
+
+[deps]
+
+source_file="res://music/One Day (From Pirates of the Caribbean_ At World's EndScore).mp3"
+dest_files=["res://.godot/imported/One Day (From Pirates of the Caribbean_ At World's EndScore).mp3-4c8c7641a42c8f830c17c533e780edec.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

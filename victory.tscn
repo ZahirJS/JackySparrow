@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcgi2v1a2v6rq"]
+
+[ext_resource type="Script" uid="uid://c7ddmleieqvnf" path="res://victory.gd" id="1_v31sk"]
+[ext_resource type="Texture2D" uid="uid://nw8hvvy33sfm" path="res://assets/finish.png" id="2_qr7ta"]
+
+[node name="Victory" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_v31sk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -589.5
+offset_top = -333.0
+offset_right = 636.5
+offset_bottom = 291.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qr7ta")
+
+[node name="Button" type="Button" parent="."]
+process_mode = 3
+offset_left = 559.0
+offset_top = 598.0
+offset_right = 1048.0
+offset_bottom = 686.0
+theme_override_font_sizes/font_size = 45
+text = "! Jugar de nuevo !"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

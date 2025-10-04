@@ -1,0 +1,69 @@
+extends CharacterBody2D
+
+const SPEED = 100.0
+const PATROL_RANGE = 700.0
+
+var direction = 1
+var start_position = Vector2.ZERO
+var distance_traveled = 0.0
+var zoom_done = false
+
+@onready var animated_sprite = $AnimatedSprite2D
+
+func _ready():
+	animated_sprite.play("walk")
+	start_position = global_position
+
+func _physics_process(delta):
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	
+	velocity.x = direction * SPEED
+	distance_traveled = abs(global_position.x - start_position.x)
+	
+	if distance_traveled >= PATROL_RANGE:
+		direction *= -1
+		animated_sprite.flip_h = !animated_sprite.flip_h
+		start_position = global_position
+	
+	# Detectar al jugador desde MUY lejos
+	if not zoom_done and is_visible_in_tree():
+		var player = get_tree().get_first_node_in_group("player")
+		if player:
+			var distance_to_player = abs(global_position.x - player.global_position.x)
+			if distance_to_player < 2000:  # Cambiado de 800 a 2000 = detecta desde MUCHO más lejos
+				zoom_done = true
+				do_zoom_effect()
+	
+	move_and_slide()
+
+func do_zoom_effect():
+	zoom_camera_out()
+	await get_tree().create_timer(5.0).timeout
+	zoom_camera_normal()
+
+func _on_hit_box_body_entered(body):
+	if body.name == "Player":
+		if body.velocity.y > 0 and body.global_position.y < global_position.y - 20:
+			print("¡Enemigo eliminado!")
+			queue_free()
+			body.velocity.y = -300
+		else:
+			body.take_damage()
+			var is_game_over = GameManager.lose_life()
+			if is_game_over:
+				get_tree().reload_current_scene()
+
+func zoom_camera_out():
+	var player = get_tree().get_first_node_in_group("player")
+	if player and player.has_node("Camera2D"):
+		var camera = player.get_node("Camera2D")
+		var tween = create_tween()
+		tween.tween_property(camera, "zoom", Vector2(0.2, 0.2), 1.0)  # 0.2 = MÁXIMO zoom out
+
+func zoom_camera_normal():
+	var player = get_tree().get_first_node_in_group("player")
+	if player and player.has_node("Camera2D"):
+		var camera = player.get_node("Camera2D")
+		var tween = create_tween()
+		tween.tween_property(camera, "zoom", Vector2(1, 1), 1.0)

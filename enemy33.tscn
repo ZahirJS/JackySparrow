@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://d032eqbedblt2"]
+
+[ext_resource type="Script" uid="uid://d2j3wd4xpfssu" path="res://enemy_3.gd" id="1_xogix"]
+[ext_resource type="Texture2D" uid="uid://dbv44eln4d1eo" path="res://assets/kraken.png" id="2_5dmb7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dxifv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5dmb7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwjut"]
+size = Vector2(2147.5, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epg4t"]
+size = Vector2(2017, 1632)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_xogix")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_dxifv")
+animation = &"walk"
+speed_scale = 2.0
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-19.75, 727)
+shape = SubResource("RectangleShape2D_pwjut")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(8, -50)
+shape = SubResource("RectangleShape2D_epg4t")
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

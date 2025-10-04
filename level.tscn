@@ -1,0 +1,1111 @@
+[gd_scene load_steps=19 format=3 uid="uid://rbsrsvgrn1du"]
+
+[ext_resource type="Texture2D" uid="uid://dgx0ojksbsfjm" path="res://assets/background.png" id="1_oi3di"]
+[ext_resource type="PackedScene" uid="uid://b7v5cjk1bpwqd" path="res://player.tscn" id="1_u52ul"]
+[ext_resource type="Texture2D" uid="uid://gfoq76h4pdti" path="res://assets/wood.png" id="2_vonw3"]
+[ext_resource type="Script" uid="uid://bbpndg4m0hipb" path="res://death_zone.gd" id="4_0b4ue"]
+[ext_resource type="PackedScene" uid="uid://d2fs1kuumkpml" path="res://coin.tscn" id="5_f2txt"]
+[ext_resource type="PackedScene" uid="uid://dwfhclmsanc1k" path="res://hud.tscn" id="6_1ainy"]
+[ext_resource type="PackedScene" uid="uid://d1y4ge6egpjyd" path="res://flag.tscn" id="7_n6hdu"]
+[ext_resource type="PackedScene" uid="uid://xieg2fhfc5tx" path="res://enemy.tscn" id="8_km5ld"]
+[ext_resource type="PackedScene" uid="uid://bppxuugghggur" path="res://obstacle.tscn" id="9_i2t4f"]
+[ext_resource type="AudioStream" uid="uid://bj6c6jyo0226o" path="res://music/One Day (From Pirates of the Caribbean_ At World's EndScore).mp3" id="10_8cye3"]
+[ext_resource type="PackedScene" uid="uid://mm1tewtjaori" path="res://enemy2.tscn" id="11_2orkt"]
+[ext_resource type="PackedScene" uid="uid://d032eqbedblt2" path="res://enemy33.tscn" id="13_8b0r0"]
+[ext_resource type="PackedScene" uid="uid://dkfujy8t4sdia" path="res://enemyCalavera.tscn" id="14_h6smj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vonw3"]
+size = Vector2(256, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi3di"]
+size = Vector2(558, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aicyk"]
+size = Vector2(1326, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6smj"]
+size = Vector2(3398, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b4ue"]
+size = Vector2(18092.5, 20)
+
+[node name="Level" type="Node2D"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_oi3di")
+
+[node name="Player" parent="." instance=ExtResource("1_u52ul")]
+position = Vector2(99, 593)
+
+[node name="Platform1" type="StaticBody2D" parent="."]
+position = Vector2(69, 677)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform1"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(500, 670)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(943, 599)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform3"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform4" type="StaticBody2D" parent="."]
+position = Vector2(1421, 498)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform4"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform11" type="StaticBody2D" parent="."]
+position = Vector2(1630, 460)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform11"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform11"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform33" type="StaticBody2D" parent="."]
+position = Vector2(285, 677)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform33"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform33"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform5" type="StaticBody2D" parent="."]
+position = Vector2(1815, 425)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform5"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform6" type="StaticBody2D" parent="."]
+position = Vector2(3888, 619)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform6"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform6"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform7" type="StaticBody2D" parent="."]
+position = Vector2(5080, 543)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform7"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform7"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform8" type="StaticBody2D" parent="."]
+position = Vector2(5456, 452)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform8"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform8"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform9" type="StaticBody2D" parent="."]
+position = Vector2(5809, 365)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform9"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform9"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform10" type="StaticBody2D" parent="."]
+position = Vector2(6272, 278)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform10"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform10"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform12" type="StaticBody2D" parent="."]
+position = Vector2(4405, 271)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform12"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform12"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform13" type="StaticBody2D" parent="."]
+position = Vector2(4578, 102)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform13"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform13"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform14" type="StaticBody2D" parent="."]
+position = Vector2(6777, 43)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform14"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform14"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform15" type="StaticBody2D" parent="."]
+position = Vector2(7916, -95)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform15"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform15"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform16" type="StaticBody2D" parent="."]
+position = Vector2(6047, 322)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform16"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform16"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform17" type="StaticBody2D" parent="."]
+position = Vector2(5649, 427)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform17"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform17"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform18" type="StaticBody2D" parent="."]
+position = Vector2(5277, 511)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform18"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform18"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform19" type="StaticBody2D" parent="."]
+position = Vector2(9007, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform19"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform19"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform20" type="StaticBody2D" parent="."]
+position = Vector2(9237, -41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform20"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform20"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform34" type="StaticBody2D" parent="."]
+position = Vector2(9962, -245)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform34"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform34"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform35" type="StaticBody2D" parent="."]
+position = Vector2(11350, -618)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform35"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform35"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform36" type="StaticBody2D" parent="."]
+position = Vector2(12393, -825)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform36"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform36"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform37" type="StaticBody2D" parent="."]
+position = Vector2(13533, -995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform37"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform37"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform49" type="StaticBody2D" parent="."]
+position = Vector2(13326, -586)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform49"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform49"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform50" type="StaticBody2D" parent="."]
+position = Vector2(16514, 258)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform50"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform50"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform51" type="StaticBody2D" parent="."]
+position = Vector2(17554, 344)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform51"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform51"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform38" type="StaticBody2D" parent="."]
+position = Vector2(12734, 228)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform38"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform38"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform40" type="StaticBody2D" parent="."]
+position = Vector2(12737, 314)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform40"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform40"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform41" type="StaticBody2D" parent="."]
+position = Vector2(12737, 407)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform41"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform41"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform42" type="StaticBody2D" parent="."]
+position = Vector2(12740, 507)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform42"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform42"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform43" type="StaticBody2D" parent="."]
+position = Vector2(12743, 607)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform43"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform43"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform44" type="StaticBody2D" parent="."]
+position = Vector2(12743, 607)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform44"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform44"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform45" type="StaticBody2D" parent="."]
+position = Vector2(12743, 607)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform45"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform45"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform46" type="StaticBody2D" parent="."]
+position = Vector2(12992, 610)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform46"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform46"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform47" type="StaticBody2D" parent="."]
+position = Vector2(12992, 610)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform47"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform47"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform48" type="StaticBody2D" parent="."]
+position = Vector2(12992, 610)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform48"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform48"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform39" type="StaticBody2D" parent="."]
+position = Vector2(13313, 222)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform39"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform39"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform21" type="StaticBody2D" parent="."]
+position = Vector2(9634, 594)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform21"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform21"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform22" type="StaticBody2D" parent="."]
+position = Vector2(9790, 643)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform22"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform22"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform23" type="StaticBody2D" parent="."]
+position = Vector2(10040, 706)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform23"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform23"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform24" type="StaticBody2D" parent="."]
+position = Vector2(10269, 706)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform24"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform24"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform25" type="StaticBody2D" parent="."]
+position = Vector2(10425, 660)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform25"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform25"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform26" type="StaticBody2D" parent="."]
+position = Vector2(10599, 607)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform26"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform26"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform27" type="StaticBody2D" parent="."]
+position = Vector2(10503, 694)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform27"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform27"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform28" type="StaticBody2D" parent="."]
+position = Vector2(9672, 625)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform28"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform28"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform29" type="StaticBody2D" parent="."]
+position = Vector2(9846, 673)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform29"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform29"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform30" type="StaticBody2D" parent="."]
+position = Vector2(9721, 247)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform30"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform30"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform31" type="StaticBody2D" parent="."]
+position = Vector2(10252, 280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform31"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform31"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="Platform32" type="StaticBody2D" parent="."]
+position = Vector2(10791, 209)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform32"]
+position = Vector2(139, 78)
+shape = SubResource("RectangleShape2D_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform32"]
+position = Vector2(139, 79)
+scale = Vector2(0.3131068, 0.33828384)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform1" type="StaticBody2D" parent="."]
+position = Vector2(2274, 356)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform1"]
+position = Vector2(295, 72)
+shape = SubResource("RectangleShape2D_oi3di")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform1"]
+position = Vector2(293, 73.62499)
+scale = Vector2(0.6868932, 0.37376243)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform2" type="StaticBody2D" parent="."]
+position = Vector2(3182, 728)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform2"]
+position = Vector2(295, 72)
+shape = SubResource("RectangleShape2D_oi3di")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform2"]
+position = Vector2(293, 73.62499)
+scale = Vector2(0.6868932, 0.37376243)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform3" type="StaticBody2D" parent="."]
+position = Vector2(4397, 648)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform3"]
+position = Vector2(295, 72)
+shape = SubResource("RectangleShape2D_oi3di")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform3"]
+position = Vector2(293, 73.62499)
+scale = Vector2(0.6868932, 0.37376243)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform10" type="StaticBody2D" parent="."]
+position = Vector2(1339, 914)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform10"]
+position = Vector2(662, 123)
+shape = SubResource("RectangleShape2D_aicyk")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform10"]
+position = Vector2(659.49994, 124)
+scale = Vector2(1.6274271, 0.11303629)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform11" type="StaticBody2D" parent="."]
+position = Vector2(14155, -640)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform11"]
+position = Vector2(1398, 172)
+shape = SubResource("RectangleShape2D_h6smj")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform11"]
+position = Vector2(1395.0004, 174)
+scale = Vector2(4.179611, 0.1786303)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform16" type="StaticBody2D" parent="."]
+position = Vector2(14750, 811)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform16"]
+position = Vector2(1398, 172)
+shape = SubResource("RectangleShape2D_h6smj")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform16"]
+position = Vector2(1395.0004, 174)
+scale = Vector2(4.179611, 0.1786303)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform4" type="StaticBody2D" parent="."]
+position = Vector2(6710, 482)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform4"]
+position = Vector2(295, 72)
+shape = SubResource("RectangleShape2D_oi3di")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform4"]
+position = Vector2(293, 73.62499)
+scale = Vector2(0.6868932, 0.37376243)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform5" type="StaticBody2D" parent="."]
+position = Vector2(7390, 479)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform5"]
+position = Vector2(295, 72)
+shape = SubResource("RectangleShape2D_oi3di")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform5"]
+position = Vector2(293, 73.62499)
+scale = Vector2(0.6868932, 0.37376243)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform6" type="StaticBody2D" parent="."]
+position = Vector2(8087, 476)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform6"]
+position = Vector2(295, 72)
+shape = SubResource("RectangleShape2D_oi3di")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform6"]
+position = Vector2(293, 73.62499)
+scale = Vector2(0.6868932, 0.37376243)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform8" type="StaticBody2D" parent="."]
+position = Vector2(8484, 83)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform8"]
+position = Vector2(295, 72)
+shape = SubResource("RectangleShape2D_oi3di")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform8"]
+position = Vector2(293, 73.62499)
+scale = Vector2(0.6868932, 0.37376243)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform7" type="StaticBody2D" parent="."]
+position = Vector2(7351, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform7"]
+position = Vector2(295, 72)
+shape = SubResource("RectangleShape2D_oi3di")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform7"]
+position = Vector2(300, 72)
+scale = Vector2(0.6868932, 0.37376243)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform9" type="StaticBody2D" parent="."]
+position = Vector2(10108, -293)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform9"]
+position = Vector2(295, 72)
+shape = SubResource("RectangleShape2D_oi3di")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform9"]
+position = Vector2(300, 72)
+scale = Vector2(0.6868932, 0.37376243)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform12" type="StaticBody2D" parent="."]
+position = Vector2(13233, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform12"]
+position = Vector2(295, 72)
+shape = SubResource("RectangleShape2D_oi3di")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform12"]
+position = Vector2(300, 72)
+scale = Vector2(0.6868932, 0.37376243)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform13" type="StaticBody2D" parent="."]
+position = Vector2(13784, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform13"]
+position = Vector2(295, 72)
+shape = SubResource("RectangleShape2D_oi3di")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform13"]
+position = Vector2(300, 72)
+scale = Vector2(0.6868932, 0.37376243)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform14" type="StaticBody2D" parent="."]
+position = Vector2(13555, 235)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform14"]
+position = Vector2(295, 72)
+shape = SubResource("RectangleShape2D_oi3di")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform14"]
+position = Vector2(300, 72)
+scale = Vector2(0.6868932, 0.37376243)
+texture = ExtResource("2_vonw3")
+
+[node name="LargePlatform15" type="StaticBody2D" parent="."]
+position = Vector2(14528, 211)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargePlatform15"]
+position = Vector2(295, 72)
+shape = SubResource("RectangleShape2D_oi3di")
+
+[node name="Sprite2D" type="Sprite2D" parent="LargePlatform15"]
+position = Vector2(300, 72)
+scale = Vector2(0.6868932, 0.37376243)
+texture = ExtResource("2_vonw3")
+
+[node name="DeathZone" type="Area2D" parent="."]
+script = ExtResource("4_0b4ue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(9047.75, 1037)
+shape = SubResource("RectangleShape2D_0b4ue")
+
+[node name="Coin" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(1085, 539)
+
+[node name="Coin2" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(1958, 361)
+
+[node name="Coin3" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(3248, 133)
+
+[node name="Coin4" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(4864, 585)
+
+[node name="Coin5" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(4774, 50)
+
+[node name="Coin6" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(7407, 381)
+
+[node name="Coin7" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(8151, 312)
+
+[node name="Coin8" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(9864, 220)
+
+[node name="Coin9" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(10390, 241)
+
+[node name="Coin10" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(10950, 170)
+
+[node name="Coin11" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(14280, -590)
+
+[node name="Coin13" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(14280, -590)
+
+[node name="Coin12" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(13978, -597)
+
+[node name="Coin17" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(12135, -146)
+
+[node name="Coin18" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(12202, -82)
+
+[node name="Coin19" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(12260, -20)
+
+[node name="Coin24" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(12244, 54)
+
+[node name="Coin25" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(12154, 56)
+
+[node name="Coin26" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(12060, 61)
+
+[node name="Coin27" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(11955, 59)
+
+[node name="Coin28" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(11858, 64)
+
+[node name="Coin29" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(11764, 60)
+
+[node name="Coin20" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(12324, 53)
+
+[node name="Coin21" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(12269, 127)
+
+[node name="Coin22" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(12198, 203)
+
+[node name="Coin23" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(12140, 258)
+
+[node name="Coin14" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(15678, -10)
+
+[node name="Coin15" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(15838, -13)
+
+[node name="Coin16" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(16004, -16)
+
+[node name="HUD" parent="." instance=ExtResource("6_1ainy")]
+
+[node name="Flag" parent="." instance=ExtResource("7_n6hdu")]
+position = Vector2(17690, 117)
+
+[node name="Enemy" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(1032, 487)
+
+[node name="Enemy2" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(6993, 369)
+
+[node name="Enemy12" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(13841, 114)
+
+[node name="Enemy13" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(14849, 818)
+
+[node name="Enemy14" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(15460, 825)
+
+[node name="Enemy15" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(16472, 822)
+
+[node name="Enemy16" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(17394, 825)
+
+[node name="Enemy3" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(7680, 362)
+
+[node name="Enemy4" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(8377, 359)
+
+[node name="Enemy5" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(4775, 529)
+
+[node name="Enemy6" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(10314, 591)
+
+[node name="Enemy7" parent="." instance=ExtResource("8_km5ld")]
+position = Vector2(10019, 541)
+
+[node name="Obstacle" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(710, 654)
+
+[node name="Obstacle3" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(3261, 698)
+
+[node name="Obstacle4" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(2568, 330)
+
+[node name="Obstacle5" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(5718, 412)
+
+[node name="Obstacle6" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(7517, 24)
+
+[node name="Obstacle7" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(7602, 23)
+
+[node name="Obstacle8" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(7694, 23)
+
+[node name="Obstacle9" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(7794, 22)
+
+[node name="Obstacle10" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(9703, 578)
+
+[node name="Obstacle11" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(10760, 586)
+
+[node name="Obstacle12" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(10683, 596)
+
+[node name="Obstacle13" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(10593, 606)
+
+[node name="Obstacle14" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(10562, 643)
+
+[node name="Obstacle15" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(12909, 105)
+
+[node name="Obstacle16" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(12797, 221)
+
+[node name="Obstacle17" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(12951, 216)
+
+[node name="Obstacle18" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(12871, 220)
+
+[node name="Obstacle19" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(12836, 175)
+
+[node name="Obstacle20" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(12904, 164)
+
+[node name="Obstacle21" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(12955, 149)
+
+[node name="Obstacle22" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(12979, 112)
+
+[node name="Obstacle23" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(13491, 213)
+
+[node name="Obstacle24" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(13412, 214)
+
+[node name="Obstacle25" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(13367, 209)
+
+[node name="Obstacle26" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(13446, 156)
+
+[node name="Obstacle27" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(13375, 153)
+
+[node name="Obstacle28" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(13404, 90)
+
+[node name="Obstacle29" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(13348, 81)
+
+[node name="Obstacle30" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(13330, 2)
+
+[node name="Obstacle31" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(12988, 49)
+
+[node name="Obstacle32" parent="." instance=ExtResource("9_i2t4f")]
+position = Vector2(12978, -26)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_8cye3")
+autoplay = true
+
+[node name="Enemy8" parent="." instance=ExtResource("11_2orkt")]
+position = Vector2(8720, -37)
+
+[node name="Enemy17" parent="." instance=ExtResource("11_2orkt")]
+position = Vector2(15135, 832)
+
+[node name="Enemy18" parent="." instance=ExtResource("11_2orkt")]
+position = Vector2(16265, 826)
+
+[node name="Enemy19" parent="." instance=ExtResource("11_2orkt")]
+position = Vector2(17176, 826)
+
+[node name="Enemy9" parent="." instance=ExtResource("11_2orkt")]
+position = Vector2(2561, 247)
+
+[node name="Enemy11" parent="." instance=ExtResource("13_8b0r0")]
+position = Vector2(15463, -1268)
+
+[node name="Enemy10" parent="." instance=ExtResource("14_h6smj")]
+position = Vector2(2034, 813)
+
+[node name="Enemy22" parent="." instance=ExtResource("14_h6smj")]
+position = Vector2(15822, 750)
+
+[node name="Enemy23" parent="." instance=ExtResource("14_h6smj")]
+position = Vector2(16816, 740)
+
+[connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]
